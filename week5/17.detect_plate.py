@@ -20,6 +20,9 @@ while True:
     _, th_img = cv2.threshold(gray, 120, 255, cv2.THRESH_BINARY)
     morph = cv2.morphologyEx(th_img, cv2.MORPH_CLOSE, mask, iterations=3)
 
+    mask2=np.ones((5,25),np.uint8)
+    morph = cv2.morphologyEx(morph, cv2.MORPH_OPEN, mask2, iterations=2)
+
     cv2.imshow("image", image)
     cv2.imshow("binary image", th_img)
     cv2.imshow("opening", morph)

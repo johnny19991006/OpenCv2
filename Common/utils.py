@@ -19,3 +19,6 @@ def put_string(frame, text, pt, value, color=(120, 200, 90)):             # 문�
     font = cv2.FONT_HERSHEY_SIMPLEX
     cv2.putText(frame, text, shade, font, 0.7, (0, 0, 0), 2)  # 그림자 효과
     cv2.putText(frame, text, pt, font, 0.7, (120, 200, 90), 2)  # 글자 적기
+
+def contain(p, shape):                              # 좌표(y,x)가 범위내 인지 검사
+    return 0<= p[0] < shape[0] and 0<= p[1] < shape[1]
